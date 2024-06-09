@@ -8,7 +8,7 @@ const prompt = require('prompt-sync')();
 function preencheArrayNomes(vetorNomes) {
     //Loop vai até o indice 3
     for(let i = 0; i < 4; i++) {
-        let nome = prompt('Digite o nome: ');
+        let nome = prompt('Digite o nome: ').toUpperCase();
         //Nome digitado é colocado dentro do vetor de nomes
         vetorNomes.push(nome);
     }

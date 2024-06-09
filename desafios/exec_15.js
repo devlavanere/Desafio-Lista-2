@@ -5,10 +5,12 @@ estão armazenados.
 */
 const prompt = require('prompt-sync')();
 
+// Define uma função 'arrayNumeros' que recebe um array como argumento 
 function arrayNumeros(numeros) {
     for(let i = 0; i < 10; i++) {
         let numero = parseInt(prompt('Digite o numero: '));
-        if(numero % 2 === 0) {
+        if(numero % 2 === 0) { // Verifica se o número é par
+            // Se par, adiciona uma string com a posição e o número ao array
             numeros.push(`Posição de armazenamento: ${i} = Numero: ${numero}`);
         }
     }
@@ -19,4 +21,7 @@ function arrayNumeros(numeros) {
 console.log(arrayNumeros([]));
 
         
+
+
+
 

@@ -6,7 +6,7 @@ da sequência de Fibonacci.
 
 function fibonacci(n) {
     let sequencia = [1, 1]; // Começando com os dois primeiros elementos da sequência
-    for (let i = 2; i < n; i++) { // Loop começando a partir do terceiro elemento até o n-ésimo
+    for (let i = 2; i < n; i++) { // Loop começando a partir do terceiro elemento
         sequencia.push(sequencia[i - 1] + sequencia[i - 2]); // O próximo elemento é a soma dos dois anteriores
     }
     return sequencia;

@@ -11,16 +11,15 @@ function calculaPA(primeiroTermo, razao) {
     let somaTermos = 0;
     //Loop para calcular os 10 primeiros termos
     for(let i = 0; i < 10; i++) {
-
         let termo = primeiroTermo + razao * i;
         termos.push(termo); //Adiciona o termo calculado ao array
 
         somaTermos += termos[i];
     }
 
-    console.log("Os 10 primeiros termos da PA são: " + termos.join(", "));
+    console.log(`Os 10 primeiros termos da PA são: ${termos.join(", ")}`);
 
-    console.log("A soma dos termos da PA é: " + somaTermos);
+    console.log(`A soma dos termos da PA é: ${somaTermos}`);
 }
 
 let primeiroTermo = parseInt(prompt('Digite o primeiro termo da PA: '));
