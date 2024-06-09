@@ -5,6 +5,7 @@ a) a soma dos elementos acima da diagonal principal;
 b) a soma dos elementos abaixo da diagonal principal;
 */
 
+//Funcao para calcular a soma dos elementos acima e abaixo da diagonal principal 
 function calcularSomasMatriz(matriz) {
     let somaAcimaDiagonal = 0;
     let somaAbaixoDiagonal = 0;
@@ -21,14 +22,14 @@ function calcularSomasMatriz(matriz) {
             }
         }
     }
-
+    //Cria um objeto que contem dois valores que serao retornados quando a funcao for chamada
     return {
         somaAcimaDiagonal: somaAcimaDiagonal,
         somaAbaixoDiagonal: somaAbaixoDiagonal
     }
 }
 
-//Exemplo de utilização
+//Matriz 10 X 10
 var matriz = [
     [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
     [11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
@@ -42,6 +43,20 @@ var matriz = [
     [91, 92, 93, 94, 95, 96, 97, 98, 99, 100]
 ];
 
-var resultados = calcularSomasMatriz(matriz);
+//Guardando as somas dentro da variavel resultados
+let resultados = calcularSomasMatriz(matriz);
 console.log("Soma dos elementos acima da diagonal principal:", resultados.somaAcimaDiagonal);
 console.log("Soma dos elementos abaixo da diagonal principal:", resultados.somaAbaixoDiagonal);
+
+
+
+
+
+
+
+
+
+
+
+
+

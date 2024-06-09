@@ -3,107 +3,56 @@
 P[1..3,1..5]. 
 */
 
-function calcularProdutosMatrizes(A, B) {
-    let linhasA = A.length;
-    let colunasA = A[0].length;
-    let linhasB = B.length;
-    let colunasB = B[0].length;
-
-    // Verifica se as dimensões das matrizes permitem o produto
-    if(colunasA !== linhasB) {
-        console.error('O número de colunas de A deve ser igual ao número de linhas de B.');
-        return;
+function multiplicarMatrizes(A, B) {
+    // Verifica se as matrizes têm dimensões compatíveis
+    if (A[0].length !== B.length) {
+      return null; // Retorna null se as dimensões não forem compatíveis
     }
-
-    // Inicializa a matriz produto com zeros
-    let P = new Array(linhasA);
-    for(let i = 0; i < linhasA; i++) {
-        P[i] = new Array(colunasB).fill(0);
+  
+    // Cria a matriz resultante P com as dimensões corretas
+    let P = new Array(A.length);
+    for (let i = 0; i < A.length; i++) {
+      P[i] = new Array(B[0].length); // Cria a linha com o tamanho correto
+      for (let j = 0; j < B[0].length; j++) {
+        P[i][j] = 0; // Inicializa cada elemento da linha com 0
+      }
     }
-
-    //Calcula o P
-    for(let i = 0; i < linhasA; i++) {
-        for(let j = 0; j < colunasB; j++) {
-            for(let k = 0; k < colunasA; k++) {
-             P[i][j] = A[i][k] * B[k][j];
-            }
+  
+    // Calcula cada elemento da matriz P
+    for (let i = 0; i < A.length; i++) {
+      for (let j = 0; j < B[0].length; j++) {
+        for (let k = 0; k < B.length; k++) {
+          P[i][j] += A[i][k] * B[k][j];
         }
+      }
     }
-
+  
     return P;
-}
-
-// Exemplo de utilização
-var A = [
-    [1, 2, 3, 4, 5],
-    [6, 7, 8, 9, 10],
-    [11, 12, 13, 14, 15]
-];
-
-var B = [
-    [1, 2, 3, 4, 5],
-    [6, 7, 8, 9, 10],
-    [11, 12, 13, 14, 15]
-];
-
-var produto = calcularProdutoMatrizes(A, B);
-console.log(produto);
-
-/*
-Sem utilizar a função fill
-
-function calcularProdutoMatrizes(A, B) {
-    var linhasA = A.length;
-    var colunasA = A[0].length;
-    var linhasB = B.length;
-    var colunasB = B[0].length;
-
-    // Verifica se as dimensões das matrizes permitem o produto
-    if (colunasA !== linhasB) {
-        console.error("O número de colunas de A deve ser igual ao número de linhas de B.");
-        return;
+  }
+  
+  let A = [
+    [1, 2, 3],
+    [4, 5, 6]
+  ];
+  
+  let B = [
+    [7, 8],
+    [9, 1],
+    [2, 3]
+  ];
+  
+  let P = multiplicarMatrizes(A, B);
+  
+  if (P) {
+    console.log("Matriz P:");
+    for (let i = 0; i < P.length; i++) {
+      console.log(P[i].join(" "));
     }
+  } else {
+    console.log("As matrizes não são compatíveis para multiplicação.");
+  }
 
-    // Inicializa a matriz produto com zeros
-    var P = new Array(linhasA);
-    for (var i = 0; i < linhasA; i++) {
-        P[i] = [];
-        for (var j = 0; j < colunasB; j++) {
-            P[i][j] = 0;
-        }
-    }
 
-    // Calcula o produto
-    for (var i = 0; i < linhasA; i++) {
-        for (var j = 0; j < colunasB; j++) {
-            for (var k = 0; k < colunasA; k++) {
-                P[i][j] += A[i][k] * B[k][j];
-            }
-        }
-    }
 
-    return P;
-}
 
-// Exemplo de utilização
-var A = [
-    [1, 2, 3, 4, 5],
-    [6, 7, 8, 9, 10],
-    [11, 12, 13, 14, 15]
-];
 
-var B = [
-    [1, 2, 3, 4, 5],
-    [6, 7, 8, 9, 10],
-    [11, 12, 13, 14, 15]
-];
-
-var produto = calcularProdutoMatrizes(A, B);
-console.log(produto);
-
-Este código calcula o produto das matrizes A e B, desde que A 
-seja uma matriz com dimensões [linhasA, colunasA] e B seja uma 
-matriz com dimensões [linhasB, colunasB], onde o número de colunas 
-de A é igual ao número de linhas de B. Ele retorna a matriz produto P com dimensões [linhasA, colunasB].
-
-*/

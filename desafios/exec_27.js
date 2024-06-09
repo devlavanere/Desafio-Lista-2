@@ -23,7 +23,7 @@ function multiplicarMatrizPorA(M, A) {
 
 }
 
-// Matriz M e valor A (exemplo)
+// Matriz M e valor A
 let M = [
     [1, 2, 3, 4, 5, 6],
     [7, 8, 9, 10, 11, 12],

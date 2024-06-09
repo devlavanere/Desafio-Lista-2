@@ -10,6 +10,37 @@ a operaçao conforme a informaçao contida nesta variavel:
 
 const prompt = require('prompt-sync')();
 
+//Funcao para calcular a soma dos elementos do vetor
+function somar(vetor) {
+    let soma = 0;
+    for (const elemento of vetor) {
+        soma += elemento;
+    }
+    console.log(`Soma dos elementos: ${soma}`);
+}
+
+//Funcao para calcular o produto dos elementos do vetor
+function produto(vetor) {
+    let produto = 1;
+    for(const elemento of vetor) {
+        produto *= elemento;
+    }
+    console.log(`Produto dos elementos: ${produto}`);
+}
+
+//Funcao para calcular a media dos elementos do vetor
+function media(vetor) {
+    let media = 0;
+    let quantidadeElementos = 0;
+    for(let i = 0; i < vetor.length; i++) {
+        media += vetor[i];
+        quantidadeElementos++;
+    }
+    media /= quantidadeElementos;
+    console.log(`Media dos elementos: ${media}`);
+}
+
+//Funcao principal que ler os seis elementos do vetor e a variavel de identificaçao para realizar a operacao
 function calculaOperacao() {
     //Declaracao do vetor
     const vetor = [];
@@ -28,28 +59,13 @@ function calculaOperacao() {
     //Realizando operações de acordo com a variável identificadora
     switch(operacao) {
         case 1:
-            let soma = 0;
-            for (const elemento of vetor) {
-                soma += elemento;
-            }
-            console.log(`Soma dos elementos: ${soma}`);
+            somar(vetor);
             break;
         case 2:
-            let produto = 1;
-            for(const elemento of vetor) {
-                produto *= elemento;
-            }
-            console.log(`Produto dos elementos: ${produto}`);
+            produto(vetor);
             break;
         case 3:
-            let media = 0;
-            let quantidadeElementos = 0;
-            for(let i = 0; i < vetor.length; i++) {
-                media += vetor[i];
-                quantidadeElementos++;
-            }
-            media /= quantidadeElementos;
-            console.log(`Media dos elementos: ${media}`);
+            media(vetor);
             break;
         case 4:
             ordenarVetor(vetor);
@@ -61,22 +77,26 @@ function calculaOperacao() {
             console.log(vetor);
             break;
         default:
-            console.error("Operação invalida!")
-
-    }
-
-    //Funcao para ordenaçao do vetor
-    function ordenarVetor(vetor) {
-        for (let i = 0; i < vetor.length; i++) {
-            for (let j = i + 1; j < vetor.length; j++) {
-                if (vetor[i] > vetor[j]) {
-                    const temp = vetor[i];
-                    vetor[i] = vetor[j];
-                    vetor[j] = temp;
-                }
-            }
-        }
+            console.error("Operação invalida!");
     }
 }
 
+//Funcao para ordenaçao do vetor
+function ordenarVetor(vetor) {
+    for (let i = 0; i < vetor.length; i++) {
+        for (let j = i + 1; j < vetor.length; j++) {
+            if (vetor[i] > vetor[j]) {
+                const temp = vetor[i];
+                vetor[i] = vetor[j];
+                vetor[j] = temp;
+            }
+        }
+    }
+    
+}
+
 calculaOperacao();
+
+
+
+
