@@ -4,8 +4,6 @@ Aritmética), mostrando na tela os 10 primeiros elementos da PA e a soma entre t
 valores da sequência.
 */
 
-//PA -> a1 = 10 ; r = 2 -> a1 = 10; a2 + r = 12; a3 + r = 14;
-
 const prompt = require('prompt-sync')();
 
 function calculaPA(primeiroTermo, razao) {

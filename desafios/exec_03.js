@@ -7,6 +7,8 @@ const prompt = require('prompt-sync')();
 
 function distanciaPercorrida(distancia) {
     let precoPassagem;
+
+    //Precifica a passagem com base na distancia maior ou menor que 200 km
     if(distancia <= 200) {
         precoPassagem = distancia * 0.50;
     } else {

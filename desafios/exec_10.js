@@ -45,3 +45,46 @@ function lerNumero() {
 }
 
 console.log(lerNumero());
+
+/*function lerNumero() {
+  let numeros = [];
+  let continuar = true;
+  let menorValor = Infinity; // Inicializa com infinito para garantir que o primeiro número seja o menor
+  let somaNumero = 0;
+  let quantidadePares = 0;
+
+  do {
+    let numero = parseFloat(prompt('Digite um número: '));
+    numeros.push(numero);
+
+    // Atualiza a soma e o menor valor APENAS com o último número digitado
+    somaNumero += numero;
+    if (numero < menorValor) {
+      menorValor = numero;
+    }
+    if (numero % 2 === 0) {
+      quantidadePares++;
+    }
+
+    continuar = prompt('S ou N: ').toUpperCase() === 'S'; // Simplifica a verificação de 'S'
+
+  } while (continuar);
+
+  // Calcula a média corretamente (excluindo o último -1)
+  let media = somaNumero / numeros.length;
+
+  return `Soma Total: ${somaNumero}; Menor Valor Digitado: ${menorValor}; Quantidade de Pares: ${quantidadePares}; Média: ${media} `;
+}
+
+console.log(lerNumero());*/
+
+
+
+
+
+
+
+
+
+
+

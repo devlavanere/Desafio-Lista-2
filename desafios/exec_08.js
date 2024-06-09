@@ -17,16 +17,20 @@ function pontosPorAtividadeMes(horasAtividade) {
     let pontos = 0;
     let dinheiro = 0;
     
+    // Verifica se o usuário teve alguma hora de atividade.
     if(horasAtividade > 0) {
+        // Se o número de horas for menor ou igual a 10, calcula os pontos com a taxa de 2 pontos por hora.
         if(horasAtividade <= 10) {
             pontos = horasAtividade * 2;
-        } else if(horasAtividade <= 20) {
+            
+        } else if(horasAtividade <= 20) { // Se o número de horas for menor ou igual a 20, calcula os pontos com a taxa de 5 pontos por hora.
             pontos = horasAtividade * 5;
-        } else {
+        } else { // Se o número de horas for maior que 20, calcula os pontos com a taxa de 10 pontos por hora.
             pontos = horasAtividade * 10;
         }
     }
 
+    // Calcula o valor em dinheiro que o usuário ganhou, multiplicando o número de pontos por 0,05.
     dinheiro = pontos * 0.05;
 
     return `Você teve ${pontos} pontos e ganhou R$${dinheiro.toFixed(2)} pelas horas de atividades realizadas no mês.`;
@@ -37,3 +41,10 @@ let horasAtividade = parseFloat(prompt('Digite o número de horas de atividade p
 let trocaPontosPorDinheiro = pontosPorAtividadeMes(horasAtividade);
 
 console.log(trocaPontosPorDinheiro);
+
+
+
+
+
+
+

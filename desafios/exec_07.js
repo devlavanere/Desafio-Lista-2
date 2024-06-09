@@ -16,6 +16,7 @@ const prompt = require('prompt-sync')();
 
 function alugarCarro(tipo, dias, distancia) {
     
+    // Calcula o valor do aluguel com base no tipo de carro e na distância percorrida
     if(tipo === 'popular' && distancia <= 100) {
         return distancia * 0.20 + dias * 90;
     } else if(tipo === 'popular' && distancia > 100) {
@@ -34,3 +35,9 @@ let valorDoAluguel = alugarCarro(tipo, dias, distancia);
 
 console.log(`O tipo do veículo é ${tipo}, o número de dias são ${dias} e a distancia percorrida foi ${distancia}KM`);
 console.log(`O valor total do aluguel é: R$ ${valorDoAluguel.toFixed(2)}`);
+
+
+
+
+
+

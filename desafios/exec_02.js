@@ -8,9 +8,10 @@ const prompt = require('prompt-sync')();
 
 function velocidadeCarro(velocidade) {
     let velocidadePermitida = 80;
-    let diferençaVelocidade = velocidade - velocidadePermitida;
-    let valorMulta = diferençaVelocidade * 5;
+    let diferencaVelocidade = velocidade - velocidadePermitida;
+    let valorMulta = diferencaVelocidade * 5;
 
+    //Verifica se a velocidade e maior que 80 km/h
     if(velocidade > velocidadePermitida) { 
         return `Você foi multado por ultrapassar a velocidade permitida de 80km/h no valor de R$${valorMulta.toFixed(2)}`;
     } else {

@@ -8,20 +8,23 @@ funcionário.
 const prompt = require('prompt-sync')();
 
 function compracaoSalarioPorSexo() {
-    let totalSalariosHomens = 0;
-    let totalSalariosMulheres = 0;
-    let continuar = true;
+    let totalSalariosHomens = 0;  // Inicializa a variável 'totalSalariosHomens' com 0 para armazenar a soma dos salários dos homens.
+    let totalSalariosMulheres = 0; // Inicializa a variável 'totalSalariosMulheres' com 0 para armazenar a soma dos salários das mulheres.
+    let continuar = true; // Define a variável 'continuar' como 'true' para iniciar o loop.
+
+    // Loop que continua enquanto a variável 'continuar' for 'true'.
     while(continuar) {
         let salario = parseFloat(prompt('Digite o salario: '));
         let sexo = prompt('Digite o sexo do funcionário: ');
         
         if(sexo === 'M') {
             totalSalariosHomens += salario;
-        } else {
+        } else { // Se o sexo não for 'M', assume que é feminino.
             totalSalariosMulheres += salario;
         }
 
         continuar = prompt('Digite S ou N: ').toUpperCase;
+        // Verifica se a entrada é 'S' (para continuar) e define a variável 'continuar' como 'true' ou 'false' de acordo com o resultado.
         continuar = continuar === 'S' ? true : false;
         
     }
