@@ -9,6 +9,7 @@ const prompt = require('prompt-sync')();
 let vetorNome = [];
 let vetorIdade = [];
 
+//Define função para ler nome e idade 9 de pessoas
 function lerNomeEIdade() {
     console.log('Ler Nome e Idade de 9 Pessoas: ')
     for(let i = 0; i < 9; i++) {
@@ -20,6 +21,7 @@ function lerNomeEIdade() {
     }
 }
 
+//Define uma função chamada mostrarMenoresDeIdade que lista as pessoas menores de 18 anos.
 function mostrarMenoresDeIdade() {
     console.log('Listando Menores de Idade:')
     for(let i = 0; i < vetorIdade.length; i++) {
@@ -57,3 +59,14 @@ function mostrarMenoresDeIdade() {
 
 lerDadosDasPessoas();
 mostrarMenoresDeIdade();*/
+
+
+
+
+
+
+
+
+
+
+
