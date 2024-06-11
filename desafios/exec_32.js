@@ -46,63 +46,6 @@ for(let i = 0; i < linhas; i++) {
     console.log(M[i].join(' '));
 }
 
-//Usando função
 
-// Função para ler uma matriz 12x13
-function readMatrix(rows, cols) {
-    let matrix = [];
-    for (let i = 0; i < rows; i++) {
-        let row = [];
-        for (let j = 0; j < cols; j++) {
-            let value = parseFloat(prompt(`Digite o valor para M[${i}][${j}]: `));
-            row.push(value);
-        }
-        matrix.push(row);
-    }
-    return matrix;
-}
-
-// Função para encontrar o maior valor em módulo de uma linha
-function findMaxAbsValue(row) {
-    let maxAbsValue = Math.abs(row[0]);
-    for (let i = 1; i < row.length; i++) {
-        if (Math.abs(row[i]) > maxAbsValue) {
-            maxAbsValue = Math.abs(row[i]);
-        }
-    }
-    return maxAbsValue;
-}
-
-// Função para dividir cada elemento de uma linha pelo maior valor em módulo
-function normalizeRow(row) {
-    let maxAbsValue = findMaxAbsValue(row);
-    return row.map(value => value / maxAbsValue);
-}
-
-// Função para normalizar a matriz
-function normalizeMatrix(matrix) {
-    return matrix.map(row => normalizeRow(row));
-}
-
-// Função para exibir a matriz
-function printMatrix(matrix) {
-    matrix.forEach(row => {
-        console.log(row.join(' '));
-    });
-}
-
-// Leitura da matriz 12x13
-const rows = 12;
-const cols = 13;
-let matrix = readMatrix(rows, cols);
-
-console.log("\nMatriz original:");
-printMatrix(matrix);
-
-// Normalização da matriz
-let normalizedMatrix = normalizeMatrix(matrix);
-
-console.log("\nMatriz normalizada:");
-printMatrix(normalizedMatrix);
 
 

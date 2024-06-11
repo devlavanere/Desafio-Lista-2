@@ -7,7 +7,7 @@ todos os elementos de V diferentes de A. Mostre os resultados.
 const prompt = require('prompt-sync')();
 
 // Ler o valor de A
-const A = parseInt(prompt("Digite o valor de A: "), 10);
+const A = parseInt(prompt("Digite o valor de A: "));
 
 // Cria a matriz V (30x30) e lê seus valores
 let V = [];
