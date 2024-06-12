@@ -26,11 +26,13 @@ node --version ou node -v
 <img src="img/caminho-path-1.jpg">
 
 <li>Propriedades do Sistema</li>
+
 Clique no botão -> Variáveis de Ambiente
 
 <img src="img/caminho-path-2.png">
 
 <li>Varáveis de Ambiente:</li>
+
 - Clique na variável Path e depois em editar.
 
 <img src="img/caminho-path-3.png">
@@ -100,14 +102,6 @@ npm install prompt-sync
 node exec_1.js
 ```
 6- O resultado do exercício será exibido. 
-
-Exibindo resultado no terminal do Visual Studio Code:
-
-<video src="img/exec-terminal.mp4"  controls></video>
-
-Caso deseje usar o cmd do windows:
-
-<video src="img/exec_terminal_2.mp4" controls></video>
 
 <h2><strong>Enuciado dos Desafios</strong></h2>
 
